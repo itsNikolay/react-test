@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "gulp": "^3.9.0",
-    "gulp-util": "^3.0.7"
-  },
   "devDependencies": {
+    "babelify": "^7.2.0",
     "browser-sync": "^2.9.11",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.3.0",
@@ -17,7 +14,10 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "jshint-stylish": "^2.0.1",
-    "tiny-lr": "^0.2.1"
+    "reactify": "^1.1.1",
+    "require-dir": "^0.3.0",
+    "tiny-lr": "^0.2.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
