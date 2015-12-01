@@ -8,4 +8,6 @@ gulp.task('browser-sync', function() {
       baseDir: config.dist
     }
   });
+
+  gulp.watch("dist/*.{js,jsx,scss,html}").on('change', browserSync.reload);
 });
