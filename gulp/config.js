@@ -1,5 +1,5 @@
 module.exports = {
-  srcJs: 'src/**/*.js',
+  srcJs: 'src/**/*.{js,jsx}',
   srcHtml: 'src/**/*.html',
   srcScss: 'src/**/*.scss',
   dist: 'dist'

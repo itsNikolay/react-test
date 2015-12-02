@@ -1,0 +1,23 @@
+{
+  "name": "react-base",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Nikolay Ponomarev <itsnikolay@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/itsNikolay/react-test",
+  "moduleType": [
+    "es6"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marked": "chjj/marked#~0.3.5"
+  }
+}

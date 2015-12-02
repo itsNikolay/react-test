@@ -7,11 +7,11 @@ var babelify = require('babelify');
 
 var config = require('../config');
 
-var dependencies = [
-  'react',
-  'react/addons',
-  'react-dom'
-];
+var dependencies = {
+  'react': 'react',
+  'react-dom': 'react-dom',
+  'marked': './bower_components/marked'
+};
 var scriptsCount = 0;
 
 gulp.task('scripts', function() {
@@ -27,7 +27,6 @@ function bundleApp(isProduction) {
 
   if (!isProduction && scriptsCount === 1){
     browserify({
-      require: dependencies,
       debug: true
     })
     .bundle()
@@ -36,14 +35,12 @@ function bundleApp(isProduction) {
     .pipe(gulp.dest(config.dist));
   }
 
-  if (!isProduction){
-    dependencies.forEach(function(dep){
-      appBundler.external(dep);
-    });
+  for (var prop in dependencies) {
+    appBundler.require(dependencies[prop], { expose: prop });
   }
 
   appBundler
-  .transform(babelify, {presets: ["es2015", "react"]})
+  .transform(babelify, {presets: ["es2015", "react"], ignore: /(node_modules|bower_components|shims)/})
   .bundle()
   .on('error', gutil.log)
   .pipe(source('bundle.js'))
