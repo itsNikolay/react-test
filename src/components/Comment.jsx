@@ -2,13 +2,18 @@ import React from 'react';
 import Marked from 'marked';
 
 export default class Comment extends React.Component {
+  rawMarkup() {
+    let markup = Marked(this.props.children.toString(), { sanitize: true });
+    return { __html: markup };
+  }
+
   render() {
     return (
       <div className="comment">
         <h2 className="commentAuthor">
           {this.props.author}
         </h2>
-        {Marked(this.props.children.toString())}
+        <span dangerouslySetInnerHTML={this.rawMarkup()} />
       </div>
     );
   }
