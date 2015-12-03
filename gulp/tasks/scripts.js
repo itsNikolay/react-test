@@ -8,8 +8,8 @@ var babelify = require('babelify');
 var config = require('../config');
 
 var dependencies = {
-  'react': 'react',
-  'react-dom': 'react-dom',
+  'react': './bower_components/react/react.min',
+  'react-dom': './bower_components/react/react-dom.min',
   'marked': './bower_components/marked'
 };
 var scriptsCount = 0;
