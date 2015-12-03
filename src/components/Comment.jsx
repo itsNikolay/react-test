@@ -1,12 +1,11 @@
 import React from 'react';
 import Marked from 'marked';
 
-export default class Comment extends React.Component {
+class Comment extends React.Component {
   rawMarkup() {
     let markup = Marked(this.props.children.toString(), { sanitize: true });
     return { __html: markup };
   }
-
   render() {
     return (
       <div className="comment">
@@ -18,3 +17,5 @@ export default class Comment extends React.Component {
     );
   }
 }
+
+export default Comment;
